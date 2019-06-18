@@ -1,0 +1,44 @@
+.quiz-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.choice {
+  margin: 8px 4px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.submit-button {
+  width: 300px;
+}
+
+.point {
+  color: green;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 16px;
+  color: #626262;
+  text-indent: 20px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.exam-title {
+  font-size: 28px;
+}
+
+.uk-radio {
+  margin-right: 1em;
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 480px) {
+  .submit-button {
+    width: 100%;
+  }
+}

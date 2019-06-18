@@ -1,0 +1,137 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- <title>Template</title> -->
+        <title>Fablab | Thammasat University</title>
+        
+        <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
+        
+        <script src="{% static 'js/uikit.min.js' %}"></script>
+        <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700&amp;subset=thai">
+        <link rel="shortcut icon" href="">
+
+        <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+        <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+        <link href="{% static 'plugins/css/resizable.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+        <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+        <style>
+            .main-container {margin-top: 7em}
+        </style>
+
+        <script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+
+    </head>
+    <body id="app">
+        <div>
+            <!-- header -->
+            <div class="uk-panel">    
+                    <!-- data-uk-sticky   -->
+                    <div class="navbar">
+                        <div class="header">
+                        <nav class="uk-navbar-container" uk-navbar="mode: click" >
+                            <div class="uk-navbar-left ">
+                                <div class="uk-flex uk-flex-column uk-width-3-3 uk-margin-left">
+                                        <div class="uk-margin-remove-bottom">
+                                            <a href="/"><img src="{% static 'img/fablab-logo.png' %}" width="150"></a>
+                                        </div>
+                                        <div class="uk-margin-remove-top text-logo">
+                                            <a class="uk-link-reset uk-margin-remove-bottom " href="/">Fabrication Lab Thammasat University</a>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="uk-navbar-right">
+                                    
+                                <ul class="uk-navbar-nav uk-visible@l">
+                                        {% for i in menu%}
+                                        
+                                            <li class="menu"><a href="/{{ i.name }}">{{ i.thai_name }}</a></li>
+                                        {% endfor %}
+                                        <li class="menu"><a href="">เนื้อหาบทเรียน</a></li>
+                                        <li class="menu"><a href="">กระดานสนทนา</a></li>
+
+                                        {% if user.is_authenticated %}
+                                            <li class="menu"><a href="">แบบทดสอบ</a></li>
+                                        {% endif %}
+
+                                        {% if user.is_authenticated %}
+                                        <hr class="uk-divider-vertical">
+                                            <header class="uk-comment-body uk-grid-medium uk-flex-middle" uk-grid>
+                                                <div class="uk-width-auto ">
+                                                    <img class="uk-comment-avatar pointer-img uk-margin-remove-right" src="{{profile.img_profile.url}}" width="50" height="50" alt="" type="button">
+                                                </div>
+                                                <div class="uk-width-auto uk-padding-small">
+                                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">{{profile.name}}</a></h4>
+                                                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top uk-padding-remove-right">
+                                                        <li class="uk-padding-remove-right"><a  href="">แก้ไขโปรไฟล์</a></li>
+                                                        <li class="modify-padding"><a href="">ออกจากระบบ</a></li>
+                                                    </ul>
+                                                </div>
+                                            </header>
+                                        </div>
+                                        
+                                        {% else %}
+                                            <li class="menu"><a href="">เข้าสู่ระบบ</a></li>
+                                        {% endif %}
+                                </ul>
+                                <div class="dropdown uk-hidden@l">
+                                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon></a>
+                                    <div uk-dropdown="pos: bottom-right; mode: click; animation: uk-animation-slide-top-small;">
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            {% for i in menu%}
+                                            <li class="menu"><a href="/{{ i.name }}">{{ i.thai_name }}</a></li>
+                                        {% endfor %}
+                                            <li class="menu"><a href="">เนื้อหาบทเรียน</a></li>
+                                            <li class="menu"><a href="">กระดานสนทนา</a></li>
+
+                                            {% if user.is_authenticated %}
+                                                <li class="menu"><a href="">แบบทดสอบ</a></li>
+                                            {% endif %}
+
+                                            {% if user.is_authenticated %}
+                                                <li class="menu" ><a href="" > แก้ไขโปรไฟล์ </a></li>
+                                                <li class="menu"><a href="" > ออกจากระบบ </a></li>
+                                            {% else %}
+                                                <li><a href="" >เข้าสู่ระบบ</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        </div>
+                    </div>
+            </div>
+            
+        <div class="content-block">
+            {% block content %}{% endblock content %}
+        </div>
+
+            <div class="footer-page">
+                <p>fablab.sci.tu.ac.th</p>
+                <p class="uk-margin-remove-bottom">copyright @ 2018 Thammasat University</p>
+            </div>
+        
+    </div> 
+
+        {% block js %}{% endblock %}
+
+        <script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'martor/js/martor.min.js' %}"></script>
+    </body>
+</html>

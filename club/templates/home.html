@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body-block"> 
+    <div class="uk-padding content">
+    {% if canCreateQuestion %}
+    <div>
+        <a class="uk-button uk-button-primary" href=""> สร้างคำถามใหม่ </a>
+    </div>
+    {% endif %}
+    <table class="uk-table uk-table-hover uk-table-divider">
+        <thead>
+            <tr>
+                <th width="70%">หัวข้อ</th>
+                <th width="15%">สร้างโดย</th>
+                <th width="15%">สร้างเมื่อ</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in question %}
+            <tr>
+                <td><a href="">{{i.title}}</a></td>
+                <td>{{i.writter}}</td>
+                {% load tz %}
+                {% timezone "Asia/Bangkok" %}
+                    <td>{{i.timestamp}}</td>
+                {% endtimezone %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    
+{% endblock %}

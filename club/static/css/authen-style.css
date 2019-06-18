@@ -1,0 +1,50 @@
+#auth-form {
+    background-color: rgba(0, 0, 0, 0.06);
+    width: 100vw;
+    height: 100vh;
+}
+
+.fab {
+    padding-top: 4px;
+    margin-right: 16px;
+}
+
+.facebook {
+    background-color: #4267b2;
+    border: solid 1px #4267b2;
+    color: #fefefe;
+}
+
+.facebook:hover {
+    background-color: #fefefe;
+    color: #4267b2;
+}
+
+.google {
+    background-color: #D3463B;
+    border: solid 1px #D3463B;
+    color: #fefefe;
+}
+
+.google:hover {
+    background-color: #fefefe;
+    color: #D3463B;
+}
+
+.uk-button {
+    margin: 8px 0;
+    padding: 2px 16px;
+    text-align: left;
+    border-radius: 4px;
+    transition: background-color 500ms;
+}
+
+.uk-logo {
+    font-size: 48px;
+}
+
+@media only screen and (max-width: 480px) {
+    .uk-card {
+        height: 100%;
+    }
+} 

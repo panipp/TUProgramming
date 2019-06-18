@@ -1,0 +1,238 @@
+body {
+  font-size: 18px !important;
+}
+
+.menu a {
+  font-size: 16px !important;
+}
+
+.content-block {
+  padding-top: 8px;
+  min-height: calc(100vh - 170px);
+}
+
+.body-block {
+  width: 100%;
+  max-width: 1380px;
+  min-width: 250px;
+  min-height: 100vh;
+  height: auto;
+  margin: 10px auto;
+  background-color: #FFFFFF;
+}
+
+#app {
+  background-color: #F1F1F3;
+  width: 100%;
+  height: auto;
+}
+
+*:not(i) {
+  font-family: 'Kanit', 'sans-serif' !important;
+ 
+}
+
+form.ui.form *:not(i) {
+  font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace !important;
+}
+
+.navbar {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; 
+}
+
+.navbar .header {
+  position: fixed;
+  padding-bottom: 1px;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  /* max-width: 1920px; */
+  /* box-shadow: 0 2px 2px #636363cc; */
+}
+
+.navbar .uk-navbar-container {
+  background-color: #fefefe !important;
+  margin-top: 0 !important;
+  padding: 12px 0;
+  box-shadow: 0 -1px 4px #636363cc;
+}
+
+.navbar .uk-navbar-nav, .navbar .dropdown {
+  margin-right: 24px;
+}
+
+.navbar .uk-dropdown {
+  background-color: #f9f9f9;
+  width: 320px;
+}
+
+.navbar .uk-logo, .navbar .uk-logo p {
+  /* color: #f9f9f9; */
+  font-size: 0.7em;
+  color: #2e2e2e;
+}
+
+.uk-logo {
+  margin-bottom: 0 !important;
+} 
+
+.content {
+  min-height: calc(100vh - 576px);
+}
+
+.content img, .content iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+.content-detial {
+  margin: auto;
+  text-align: center;
+}
+
+.detaillcontent {
+  margin-top: 5vh;
+}
+
+iframe {
+  height: 509px;
+  width: 904px;
+}
+
+.footer-page {
+  text-align: center; 
+  background-color: #2e2e2e; 
+  color: #f1f1f1;
+  bottom: 0;
+  border: 1px solid #2e2e2e;
+}
+
+.custom-input {
+  margin-left: 16px;
+}
+
+.uk-radio {
+  clear: NONE;
+}
+
+.flex-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.pointer-img {
+  cursor: pointer;
+}
+
+.form-padding{
+  text-align: right;
+  padding-left: 15vw;
+}
+
+.modify-padding {
+  padding-left: 8px;
+}
+
+.modify-padding::before {
+  margin-right: 8px !important;
+}
+
+
+@media screen and (min-width: 1380px) {
+  .navbar {
+    height: 100px;
+  }
+
+  .navbar .header {
+    height: 100px;
+    background-color: #f2f2f2;
+  }
+
+  .navbar .uk-logo {
+    font-size: 30px;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+  }
+
+  .navbar .uk-navbar-container {
+    margin-top: 12px;
+  }
+
+  
+}
+
+@media screen and (max-width: 1380px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .navbar .header {
+    height: 80px;
+    background-color: #f2f2f2;
+  }
+
+  .navbar .uk-logo {
+    font-size: 28px;
+    margin: 1vw;
+  }
+
+  .navbar .uk-navbar-toggle-icon {
+    padding: 0;
+  }
+
+  .navbar .uk-dropdown {
+    width: 100%;
+    left: 0 !important;
+    margin: 0;
+    background-color: #f2f2f2;
+  }
+
+  .slide .uk-slideshow-items {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 478px) {
+  .martor-toolbar {
+    display: none !important;
+  }
+
+  .form-padding {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .uk-navbar-left {
+    margin-left: 9px;
+  }
+
+  .uk-navbar-left .text-logo{
+    display: none;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  
+  .form-padding {
+    text-align: left;
+    margin: auto;
+  }
+
+  .margin-ss{
+    margin: 0 auto;
+  }
+}
+
